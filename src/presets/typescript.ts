@@ -20,6 +20,10 @@ const SHARED_RULES: NonNullable<Linter.Config['rules']> = {
   '@typescript-eslint/unified-signatures': ['off'],
   'func-style': ['error', 'expression', { allowArrowFunctions: true }],
   'id-length': ['error', { min: 2 }],
+  'no-restricted-syntax': ['error', {
+    selector: 'SwitchStatement',
+    message: 'Switch statements are disallowed. Use objects or if-else chains instead.',
+  }],
 };
 
 const toArray = <T>(value: T | T[]): T[] => (Array.isArray(value) ? value : [value]);
