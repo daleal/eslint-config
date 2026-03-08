@@ -1,6 +1,6 @@
 {
   "name": "@daleal/eslint-config-vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "daleal's opinionated ESLint flat config for Vue + TypeScript projects",
   "homepage": "https://github.com/daleal/eslint-config/tree/main/packages/eslint-config-vue",
   "bugs": {
@@ -23,8 +23,8 @@
     }
   },
   "dependencies": {
-    "@daleal/eslint-config-core": "^0.1.1",
-    "@daleal/eslint-config-ts": "^0.1.1",
+    "@daleal/eslint-config-core": "^0.1.2",
+    "@daleal/eslint-config-ts": "^0.1.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-vue": "^10.8.0",
     "typescript-eslint": "^8.56.1",
