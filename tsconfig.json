@@ -32,5 +32,5 @@
       "@daleal/eslint-vue": ["./packages/eslint-vue/index.ts"]
     }
   },
-  "include": ["eslint.config.ts", "packages/**/*.ts"]
+  "include": ["eslint.config.ts", "packages/**/*.ts", "scripts/**/*.ts"]
 }

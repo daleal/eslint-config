@@ -1,6 +1,6 @@
 {
   "name": "@daleal/eslint-typescript",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Shared ESLint flat config for TypeScript projects",
   "module": "index.ts",
   "type": "module",
@@ -8,7 +8,7 @@
     ".": "./index.ts"
   },
   "dependencies": {
-    "@daleal/eslint-core": "^0.1.0",
+    "@daleal/eslint-core": "^0.0.1",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "eslint-plugin-import": "^2.32.0",
