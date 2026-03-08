@@ -15,6 +15,7 @@
     "@daleal/eslint-config-ts": "workspace:*",
     "@types/bun": "latest",
     "eslint": "^9.39.4",
+    "jiti": "^2.6.1",
     "typescript": "^5.9.3"
   }
 }
