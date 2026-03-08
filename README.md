@@ -15,40 +15,49 @@ bun add -D @daleal/eslint-config-ts eslint typescript
 bun add -D @daleal/eslint-config-vue eslint typescript
 ```
 
-## TypeScript preset
+## TypeScript
 
-```js
+```ts
 // eslint.config.mjs
-import { eslint } from "@daleal/eslint-config-ts";
+import { eslint } from '@daleal/eslint-config-ts';
+
+export default eslint();
+```
+
+You can also pass other flat configs using the `overrides` option:
+
+```ts
+// eslint.config.mjs
+import { eslint } from '@daleal/eslint-config-ts';
 
 export default eslint({
   overrides: [
     {
       rules: {
-        "no-console": "off",
+        'no-console': 'off',
       },
     },
   ],
 });
 ```
 
-## Vue preset (Vite)
+## Vue
 
-```js
+```ts
 // eslint.config.mjs
-import { eslint } from "@daleal/eslint-config-vue";
+import { eslint } from '@daleal/eslint-config-vue';
 
 export default eslint({
-  shorthands: ["~", "#"],
+  shorthands: ['~', '#'],
 });
 ```
 
-## Vue preset (Nuxt)
+### With Nuxt
 
-```js
+```ts
 // eslint.config.mjs
-import withNuxt from "./.nuxt/eslint.config.mjs";
-import { eslint } from "@daleal/eslint-config-vue";
+import { eslint } from '@daleal/eslint-config-vue';
+import withNuxt from './.nuxt/eslint.config.mjs';
 
 export default withNuxt(
   ...eslint(),
@@ -58,33 +67,14 @@ export default withNuxt(
 If you need project-specific guards (e.g. restricted imports) or custom ignores,
 pass them with `overrides`.
 
-```js
-import { eslint } from "@daleal/eslint-config-ts";
+```ts
+import { eslint } from '@daleal/eslint-config-ts';
 
 export default eslint({
   overrides: [
     {
-      ignores: ["vendor/**"],
+      ignores: ['vendor/**'],
     },
   ],
 });
 ```
-
-## API
-
-### `@daleal/eslint-config-ts`
-
-Exports `eslint(options?)`.
-
-Options:
-
-- `overrides?: Linter.Config | Linter.Config[]`
-
-### `@daleal/eslint-config-vue`
-
-Exports `eslint(options?)`.
-
-Options:
-
-- `overrides?: Linter.Config | Linter.Config[]`
-- `shorthands?: string[]` (default `['~']`)
