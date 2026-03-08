@@ -24,6 +24,13 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    "noPropertyAccessFromIndexSignature": false,
+    "baseUrl": ".",
+    "paths": {
+      "@daleal/eslint-core": ["./packages/eslint-core/index.ts"],
+      "@daleal/eslint-typescript": ["./packages/eslint-typescript/index.ts"],
+      "@daleal/eslint-vue": ["./packages/eslint-vue/index.ts"]
+    }
+  },
+  "include": ["eslint.config.ts", "packages/**/*.ts"]
 }

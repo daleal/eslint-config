@@ -1,4 +1,4 @@
-# @daleal/eslint
+# @daleal/eslint packages
 
 Shared ESLint flat configs for:
 
@@ -8,25 +8,39 @@ Shared ESLint flat configs for:
 ## Install
 
 ```bash
-bun add -D @daleal/eslint eslint @eslint/js typescript-eslint @stylistic/eslint-plugin eslint-plugin-vue vue-eslint-parser eslint-plugin-import
+bun add -D @daleal/eslint-typescript eslint @eslint/js typescript-eslint @stylistic/eslint-plugin eslint-plugin-import typescript
+```
+
+```bash
+bun add -D @daleal/eslint-vue eslint @eslint/js typescript-eslint @stylistic/eslint-plugin typescript eslint-plugin-vue vue-eslint-parser eslint-plugin-import
 ```
 
 ## TypeScript preset
 
 ```js
 // eslint.config.mjs
-import { typescript } from "@daleal/eslint";
+import { eslint } from "@daleal/eslint-typescript";
 
-export default typescript();
+export default eslint({
+  overrides: [
+    {
+      rules: {
+        "no-console": "off",
+      },
+    },
+  ],
+});
 ```
 
 ## Vue preset (Vite)
 
 ```js
 // eslint.config.mjs
-import { vue } from "@daleal/eslint";
+import { eslint } from "@daleal/eslint-vue";
 
-export default vue();
+export default eslint({
+  shorthands: ["~", "#"],
+});
 ```
 
 ## Vue preset (Nuxt)
@@ -34,34 +48,43 @@ export default vue();
 ```js
 // eslint.config.mjs
 import withNuxt from "./.nuxt/eslint.config.mjs";
-import { vue } from "@daleal/eslint";
+import { eslint } from "@daleal/eslint-vue";
 
 export default withNuxt(
-  ...vue({ nuxt: true }),
+  ...eslint(),
 );
 ```
 
 If you need project-specific guards (e.g. restricted imports) or custom ignores,
-keep them in the local project config and append/spread this preset.
+pass them with `overrides`.
+
+```js
+import { eslint } from "@daleal/eslint-typescript";
+
+export default eslint({
+  overrides: [
+    {
+      ignores: ["vendor/**"],
+    },
+  ],
+});
+```
 
 ## API
 
-### `typescript(options?)`
+### `@daleal/eslint-typescript`
+
+Exports `eslint(options?)`.
 
 Options:
 
-- `typeAware?: boolean` (default `false`)
-- `ignores?: string[]`
-- `stylistic?: boolean` (default `true`)
+- `overrides?: Linter.Config | Linter.Config[]`
 
-### `vue(options?)`
+### `@daleal/eslint-vue`
+
+Exports `eslint(options?)`.
 
 Options:
 
-- `nuxt?: boolean` (default `false`)
-- `typeAware?: boolean` (default `false`)
-- `ignores?: string[]`
-- `stylistic?: boolean` (default `true`)
-
-When `nuxt: true`, stylistic plugin registration is skipped to avoid duplicate
-setup with Nuxt defaults.
+- `overrides?: Linter.Config | Linter.Config[]`
+- `shorthands?: string[]` (default `['~']`)

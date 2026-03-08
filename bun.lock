@@ -5,15 +5,43 @@
     "": {
       "name": "eslint",
       "devDependencies": {
+        "@daleal/eslint-typescript": "workspace:*",
         "@eslint/js": "^9.23.0",
         "@stylistic/eslint-plugin": "^3.1.0",
         "@types/bun": "latest",
         "eslint": "^9.23.0",
         "eslint-plugin-import": "^2.31.0",
         "eslint-plugin-vue": "^9.32.0",
+        "jiti": "^2.4.2",
         "typescript": "^5.8.2",
         "typescript-eslint": "^8.27.0",
         "vue-eslint-parser": "^10.1.1",
+      },
+    },
+    "packages/eslint-core": {
+      "name": "@daleal/eslint-core",
+      "version": "0.1.0",
+    },
+    "packages/eslint-typescript": {
+      "name": "@daleal/eslint-typescript",
+      "version": "0.1.0",
+      "dependencies": {
+        "@daleal/eslint-core": "^0.1.0",
+      },
+      "peerDependencies": {
+        "@eslint/js": "^9",
+        "@stylistic/eslint-plugin": "^3",
+        "eslint": "^9",
+        "typescript": "^5",
+        "typescript-eslint": "^8",
+      },
+    },
+    "packages/eslint-vue": {
+      "name": "@daleal/eslint-vue",
+      "version": "0.1.0",
+      "dependencies": {
+        "@daleal/eslint-core": "^0.1.0",
+        "@daleal/eslint-typescript": "^0.1.0",
       },
       "peerDependencies": {
         "@eslint/js": "^9",
@@ -28,6 +56,12 @@
     },
   },
   "packages": {
+    "@daleal/eslint-core": ["@daleal/eslint-core@workspace:packages/eslint-core"],
+
+    "@daleal/eslint-typescript": ["@daleal/eslint-typescript@workspace:packages/eslint-typescript"],
+
+    "@daleal/eslint-vue": ["@daleal/eslint-vue@workspace:packages/eslint-vue"],
+
     "@eslint-community/eslint-utils": ["@eslint-community/eslint-utils@4.9.1", "", { "dependencies": { "eslint-visitor-keys": "^3.4.3" }, "peerDependencies": { "eslint": "^6.0.0 || ^7.0.0 || >=8.0.0" } }, "sha512-phrYmNiYppR7znFEdqgfWHXR6NCkZEK7hwWDHZUjit/2/U0r6XvkDl0SYnoM51Hq7FhCGdLDT6zxCCOY1hexsQ=="],
 
     "@eslint-community/regexpp": ["@eslint-community/regexpp@4.12.2", "", {}, "sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew=="],
@@ -315,6 +349,8 @@
     "isarray": ["isarray@2.0.5", "", {}, "sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw=="],
 
     "isexe": ["isexe@2.0.0", "", {}, "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="],
+
+    "jiti": ["jiti@2.6.1", "", { "bin": { "jiti": "lib/jiti-cli.mjs" } }, "sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ=="],
 
     "js-yaml": ["js-yaml@4.1.1", "", { "dependencies": { "argparse": "^2.0.1" }, "bin": { "js-yaml": "bin/js-yaml.js" } }, "sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA=="],
 
