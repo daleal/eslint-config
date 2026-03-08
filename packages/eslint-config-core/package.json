@@ -1,7 +1,7 @@
 {
   "name": "@daleal/eslint-config-core",
   "version": "0.0.1",
-  "description": "Shared utilities for daleal ESLint configs",
+  "description": "Internal building blocks behind daleal's ESLint config presets",
   "module": "index.ts",
   "type": "module",
   "exports": {

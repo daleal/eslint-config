@@ -1,7 +1,7 @@
 {
   "name": "@daleal/eslint-config-ts",
   "version": "0.0.1",
-  "description": "Shared ESLint flat config for TypeScript projects",
+  "description": "daleal's opinionated ESLint flat config for TypeScript projects",
   "module": "index.ts",
   "type": "module",
   "exports": {
