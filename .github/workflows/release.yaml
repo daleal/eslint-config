@@ -72,18 +72,12 @@ jobs:
 
       - name: Publish core
         run: npm publish --workspace @daleal/eslint-config-core --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish typescript preset
         run: npm publish --workspace @daleal/eslint-config-ts --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish vue preset
         run: npm publish --workspace @daleal/eslint-config-vue --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Tag release
         env:
