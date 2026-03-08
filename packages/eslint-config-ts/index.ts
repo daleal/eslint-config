@@ -7,6 +7,7 @@ import importPlugin from 'eslint-plugin-import';
 import tseslint from 'typescript-eslint';
 
 const DEFAULT_IGNORES = ['**/node_modules/**', '**/dist/**', '**/.output/**', '**/.nuxt/**', '**/coverage/**'];
+const TYPED_FILES = ['**/*.{ts,tsx,cts,mts,vue}'];
 
 const STYLISTIC_RULES: NonNullable<Linter.Config['rules']> = {
   '@stylistic/arrow-parens': ['error', 'always'],
@@ -34,11 +35,14 @@ export const eslint = (options: ConfigOptions = {}): Linter.Config[] => {
   const configs: Linter.Config[] = [
     { ignores: DEFAULT_IGNORES },
     eslintjs.configs.recommended,
-    ...toArray(tseslint.configs.recommendedTypeChecked),
+    ...toArray(tseslint.configs.recommendedTypeChecked).map((config) => ({
+      ...config,
+      files: TYPED_FILES,
+    })),
   ];
 
   configs.push({
-    files: ['**/*.{ts,tsx,cts,mts,vue}'],
+    files: TYPED_FILES,
     languageOptions: {
       parserOptions: {
         projectService: true,
