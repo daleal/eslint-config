@@ -46,7 +46,7 @@ export const eslint = (options: ConfigOptions = {}): Linter.Config[] => {
     },
   });
 
-  configs.push(...toArray(stylistic.configs['recommended-flat']));
+  configs.push(...toArray(stylistic.configs.recommended as Linter.Config)); // eslint-disable-line @typescript-eslint/no-unnecessary-type-assertion
   configs.push({
     plugins: {
       '@stylistic': stylistic,
