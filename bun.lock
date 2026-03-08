@@ -8,17 +8,16 @@
         "@daleal/eslint-config-ts": "workspace:*",
         "@types/bun": "latest",
         "eslint": "^10.0.0",
-        "jiti": "^2.4.2",
         "typescript": "^5.9.3",
       },
     },
     "packages/eslint-config-core": {
       "name": "@daleal/eslint-config-core",
-      "version": "0.0.1",
+      "version": "0.1.2",
     },
     "packages/eslint-config-ts": {
       "name": "@daleal/eslint-config-ts",
-      "version": "0.0.1",
+      "version": "0.1.2",
       "dependencies": {
         "@daleal/eslint-config-core": "^0.0.1",
         "@eslint/js": "^10.0.1",
@@ -33,7 +32,7 @@
     },
     "packages/eslint-config-vue": {
       "name": "@daleal/eslint-config-vue",
-      "version": "0.0.1",
+      "version": "0.1.2",
       "dependencies": {
         "@daleal/eslint-config-core": "^0.0.1",
         "@daleal/eslint-config-ts": "^0.0.1",
