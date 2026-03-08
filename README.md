@@ -54,6 +54,19 @@ export default eslint({
 
 ### With Nuxt
 
+Set `eslint.config.standalone` to `false` in `nuxt.config.ts`, otherwise Nuxt will generate its own standalone config and this preset will not be merged in correctly.
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
+});
+```
+
 ```ts
 // eslint.config.mjs
 import { eslint } from '@daleal/eslint-config-vue';
