@@ -48,14 +48,14 @@ jobs:
           test "$VERSION" = "$(bun -p "require('./packages/eslint-config-ts/package.json').version")"
           test "$VERSION" = "$(bun -p "require('./packages/eslint-config-vue/package.json').version")"
 
-      - name: Lint
-        run: bun run lint
-
       - name: Typecheck
         run: bun run typecheck
 
       - name: Build
         run: bun run build
+
+      - name: Lint
+        run: bun run lint
 
       - name: Bump package versions
         id: version
