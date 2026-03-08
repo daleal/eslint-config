@@ -51,6 +51,7 @@ export const eslint = (options: ConfigOptions = {}): Linter.Config[] => {
   });
 
   configs.push(...toArray(stylistic.configs.recommended as Linter.Config)); // eslint-disable-line @typescript-eslint/no-unnecessary-type-assertion
+
   configs.push({
     plugins: {
       '@stylistic': stylistic,
@@ -60,6 +61,7 @@ export const eslint = (options: ConfigOptions = {}): Linter.Config[] => {
 
   configs.push({
     plugins: {
+      '@typescript-eslint': tseslint.plugin,
       import: importPlugin,
     },
     rules: SHARED_RULES,
