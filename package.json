@@ -14,7 +14,7 @@
   "devDependencies": {
     "@daleal/eslint-config-ts": "workspace:*",
     "@types/bun": "latest",
-    "eslint": "^10.0.0",
+    "eslint": "^9.39.4",
     "typescript": "^5.9.3"
   }
 }

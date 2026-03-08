@@ -27,11 +27,12 @@
     "@daleal/eslint-config-ts": "^0.1.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.4.0",
     "typescript-eslint": "^8.56.1",
     "vue-eslint-parser": "^10.4.0"
   },
   "peerDependencies": {
-    "eslint": "^10",
+    "eslint": "^9",
     "typescript": "^5"
   }
 }

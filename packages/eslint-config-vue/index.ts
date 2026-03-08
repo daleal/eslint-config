@@ -4,11 +4,17 @@ import { eslint as eslintTypescript } from '@daleal/eslint-config-ts';
 import type { Linter } from 'eslint';
 import importPlugin from 'eslint-plugin-import';
 import vuePlugin from 'eslint-plugin-vue';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import vueParser from 'vue-eslint-parser';
 
 type VueConfigOptions = ConfigOptions & {
   shorthands?: Array<string>
+};
+
+const VUE_RULES: NonNullable<Linter.Config['rules']> = {
+  'vue/multi-word-component-names': ['off'],
+  'vue/require-default-prop': ['off'],
 };
 
 const createVuePathGroups = (shorthands: Array<string>): ImportOrderPathGroup[] => {
@@ -41,7 +47,14 @@ export const eslint = (options: VueConfigOptions = {}): Linter.Config[] => {
     ...eslintTypescript(),
     ...toArray(vuePlugin.configs['flat/recommended']),
     {
+      files: ['**/*.{js,mjs,jsx,ts,mts,tsx,vue}'],
+      languageOptions: {
+        globals: globals.browser,
+      },
+    },
+    {
       files: ['**/*.vue'],
+      rules: VUE_RULES,
       languageOptions: {
         parser: vueParser,
         parserOptions: {
@@ -50,9 +63,6 @@ export const eslint = (options: VueConfigOptions = {}): Linter.Config[] => {
           ecmaVersion: 'latest',
           extraFileExtensions: ['.vue'],
         },
-      },
-      rules: {
-        'vue/multi-word-component-names': ['off'],
       },
     },
     {
