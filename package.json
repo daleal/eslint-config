@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "tsc --build tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "lint": "eslint ."
   },

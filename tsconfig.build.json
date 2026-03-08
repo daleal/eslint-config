@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/eslint-config-core/tsconfig.build.json" },
+    { "path": "./packages/eslint-config-ts/tsconfig.build.json" },
+    { "path": "./packages/eslint-config-vue/tsconfig.build.json" }
+  ]
+}

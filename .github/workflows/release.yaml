@@ -54,6 +54,9 @@ jobs:
       - name: Typecheck
         run: bun run typecheck
 
+      - name: Build
+        run: bun run build
+
       - name: Bump package versions
         id: version
         env:

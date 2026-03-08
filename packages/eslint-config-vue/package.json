@@ -10,10 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/daleal/eslint-config.git"
   },
-  "module": "index.ts",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
-    ".": "./index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
   "dependencies": {
     "@daleal/eslint-config-core": "^0.1.0",
