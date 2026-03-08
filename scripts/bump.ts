@@ -2,15 +2,15 @@ import { readFileSync, writeFileSync, appendFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const packagePaths = [
-  'packages/eslint-core/package.json',
-  'packages/eslint-typescript/package.json',
-  'packages/eslint-vue/package.json',
+  'packages/eslint-config-core/package.json',
+  'packages/eslint-config-ts/package.json',
+  'packages/eslint-config-vue/package.json',
 ] as const;
 
 const internalPackages = new Set([
-  '@daleal/eslint-core',
-  '@daleal/eslint-typescript',
-  '@daleal/eslint-vue',
+  '@daleal/eslint-config-core',
+  '@daleal/eslint-config-ts',
+  '@daleal/eslint-config-vue',
 ]);
 
 type ReleaseType = 'major' | 'minor' | 'patch';

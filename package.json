@@ -1,5 +1,5 @@
 {
-  "name": "@daleal/eslint",
+  "name": "@daleal/eslint-config",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@daleal/eslint-typescript": "workspace:*",
+    "@daleal/eslint-config-ts": "workspace:*",
     "@types/bun": "latest",
     "eslint": "^10.0.0",
     "jiti": "^2.4.2",

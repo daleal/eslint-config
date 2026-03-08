@@ -27,9 +27,9 @@
     "noPropertyAccessFromIndexSignature": false,
     "baseUrl": ".",
     "paths": {
-      "@daleal/eslint-core": ["./packages/eslint-core/index.ts"],
-      "@daleal/eslint-typescript": ["./packages/eslint-typescript/index.ts"],
-      "@daleal/eslint-vue": ["./packages/eslint-vue/index.ts"]
+      "@daleal/eslint-config-core": ["./packages/eslint-config-core/index.ts"],
+      "@daleal/eslint-config-ts": ["./packages/eslint-config-ts/index.ts"],
+      "@daleal/eslint-config-vue": ["./packages/eslint-config-vue/index.ts"]
     }
   },
   "include": ["eslint.config.ts", "packages/**/*.ts", "scripts/**/*.ts"]

@@ -1,6 +1,6 @@
-import type { ConfigOptions, ImportOrderPathGroup } from '@daleal/eslint-core';
-import { createImportOrderOptions, toArray } from '@daleal/eslint-core';
-import { eslint as eslintTypescript } from '@daleal/eslint-typescript';
+import type { ConfigOptions, ImportOrderPathGroup } from '@daleal/eslint-config-core';
+import { createImportOrderOptions, toArray } from '@daleal/eslint-config-core';
+import { eslint as eslintTypescript } from '@daleal/eslint-config-ts';
 import type { Linter } from 'eslint';
 import importPlugin from 'eslint-plugin-import';
 import vuePlugin from 'eslint-plugin-vue';

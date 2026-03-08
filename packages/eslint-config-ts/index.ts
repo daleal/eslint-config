@@ -1,5 +1,5 @@
-import type { ConfigOptions } from '@daleal/eslint-core';
-import { createImportOrderOptions, toArray } from '@daleal/eslint-core';
+import type { ConfigOptions } from '@daleal/eslint-config-core';
+import { createImportOrderOptions, toArray } from '@daleal/eslint-config-core';
 import eslintjs from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import type { Linter } from 'eslint';

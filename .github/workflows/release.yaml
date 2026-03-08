@@ -44,9 +44,9 @@ jobs:
 
       - name: Verify package versions are aligned
         run: |
-          VERSION="$(bun -p "require('./packages/eslint-core/package.json').version")"
-          test "$VERSION" = "$(bun -p "require('./packages/eslint-typescript/package.json').version")"
-          test "$VERSION" = "$(bun -p "require('./packages/eslint-vue/package.json').version")"
+          VERSION="$(bun -p "require('./packages/eslint-config-core/package.json').version")"
+          test "$VERSION" = "$(bun -p "require('./packages/eslint-config-ts/package.json').version")"
+          test "$VERSION" = "$(bun -p "require('./packages/eslint-config-vue/package.json').version")"
 
       - name: Lint
         run: bun run lint
@@ -66,22 +66,22 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git add packages/eslint-core/package.json packages/eslint-typescript/package.json packages/eslint-vue/package.json
+          git add packages/eslint-config-core/package.json packages/eslint-config-ts/package.json packages/eslint-config-vue/package.json
           git commit -m "release: v$VERSION"
           git push origin HEAD:main
 
       - name: Publish core
-        run: npm publish --workspace @daleal/eslint-core --access public --provenance
+        run: npm publish --workspace @daleal/eslint-config-core --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish typescript preset
-        run: npm publish --workspace @daleal/eslint-typescript --access public --provenance
+        run: npm publish --workspace @daleal/eslint-config-ts --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish vue preset
-        run: npm publish --workspace @daleal/eslint-vue --access public --provenance
+        run: npm publish --workspace @daleal/eslint-config-vue --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

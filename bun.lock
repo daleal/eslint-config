@@ -3,24 +3,24 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@daleal/eslint",
+      "name": "@daleal/eslint-config",
       "devDependencies": {
-        "@daleal/eslint-typescript": "workspace:*",
+        "@daleal/eslint-config-ts": "workspace:*",
         "@types/bun": "latest",
         "eslint": "^10.0.0",
         "jiti": "^2.4.2",
         "typescript": "^5.9.3",
       },
     },
-    "packages/eslint-core": {
-      "name": "@daleal/eslint-core",
+    "packages/eslint-config-core": {
+      "name": "@daleal/eslint-config-core",
       "version": "0.0.1",
     },
-    "packages/eslint-typescript": {
-      "name": "@daleal/eslint-typescript",
+    "packages/eslint-config-ts": {
+      "name": "@daleal/eslint-config-ts",
       "version": "0.0.1",
       "dependencies": {
-        "@daleal/eslint-core": "^0.0.1",
+        "@daleal/eslint-config-core": "^0.0.1",
         "@eslint/js": "^10.0.1",
         "@stylistic/eslint-plugin": "^5.10.0",
         "eslint-plugin-import": "^2.32.0",
@@ -31,12 +31,12 @@
         "typescript": "^5",
       },
     },
-    "packages/eslint-vue": {
-      "name": "@daleal/eslint-vue",
+    "packages/eslint-config-vue": {
+      "name": "@daleal/eslint-config-vue",
       "version": "0.0.1",
       "dependencies": {
-        "@daleal/eslint-core": "^0.0.1",
-        "@daleal/eslint-typescript": "^0.0.1",
+        "@daleal/eslint-config-core": "^0.0.1",
+        "@daleal/eslint-config-ts": "^0.0.1",
         "eslint-plugin-import": "^2.32.0",
         "eslint-plugin-vue": "^10.8.0",
         "typescript-eslint": "^8.56.1",
@@ -49,11 +49,11 @@
     },
   },
   "packages": {
-    "@daleal/eslint-core": ["@daleal/eslint-core@workspace:packages/eslint-core"],
+    "@daleal/eslint-config-core": ["@daleal/eslint-config-core@workspace:packages/eslint-config-core"],
 
-    "@daleal/eslint-typescript": ["@daleal/eslint-typescript@workspace:packages/eslint-typescript"],
+    "@daleal/eslint-config-ts": ["@daleal/eslint-config-ts@workspace:packages/eslint-config-ts"],
 
-    "@daleal/eslint-vue": ["@daleal/eslint-vue@workspace:packages/eslint-vue"],
+    "@daleal/eslint-config-vue": ["@daleal/eslint-config-vue@workspace:packages/eslint-config-vue"],
 
     "@eslint-community/eslint-utils": ["@eslint-community/eslint-utils@4.9.1", "", { "dependencies": { "eslint-visitor-keys": "^3.4.3" }, "peerDependencies": { "eslint": "^6.0.0 || ^7.0.0 || >=8.0.0" } }, "sha512-phrYmNiYppR7znFEdqgfWHXR6NCkZEK7hwWDHZUjit/2/U0r6XvkDl0SYnoM51Hq7FhCGdLDT6zxCCOY1hexsQ=="],
 

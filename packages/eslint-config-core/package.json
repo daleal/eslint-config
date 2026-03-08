@@ -1,5 +1,5 @@
 {
-  "name": "@daleal/eslint-core",
+  "name": "@daleal/eslint-config-core",
   "version": "0.0.1",
   "description": "Shared utilities for daleal ESLint configs",
   "module": "index.ts",
