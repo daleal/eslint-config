@@ -8,11 +8,11 @@ Shared ESLint flat configs for:
 ## Install
 
 ```bash
-bun add -D @daleal/eslint-typescript eslint @eslint/js typescript-eslint @stylistic/eslint-plugin eslint-plugin-import typescript
+bun add -D @daleal/eslint-typescript eslint typescript
 ```
 
 ```bash
-bun add -D @daleal/eslint-vue eslint @eslint/js typescript-eslint @stylistic/eslint-plugin typescript eslint-plugin-vue vue-eslint-parser eslint-plugin-import
+bun add -D @daleal/eslint-vue eslint typescript
 ```
 
 ## TypeScript preset
