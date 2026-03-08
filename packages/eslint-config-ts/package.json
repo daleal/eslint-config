@@ -1,6 +1,6 @@
 {
   "name": "@daleal/eslint-config-ts",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "daleal's opinionated ESLint flat config for TypeScript projects",
   "homepage": "https://github.com/daleal/eslint-config/tree/main/packages/eslint-config-ts",
   "bugs": {
@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "@daleal/eslint-config-core": "^0.1.2",
+    "@daleal/eslint-config-core": "^0.1.3",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "eslint-plugin-import": "^2.32.0",
