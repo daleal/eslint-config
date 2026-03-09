@@ -15,6 +15,11 @@ type VueConfigOptions = ConfigOptions & {
 const VUE_RULES: NonNullable<Linter.Config['rules']> = {
   'vue/multi-word-component-names': ['off'],
   'vue/require-default-prop': ['off'],
+  'vue/define-props-destructuring': ['error', { destructure: 'never' }],
+  'no-restricted-syntax': ['error', {
+    selector: 'ExpressionStatement > CallExpression[callee.name=\'defineProps\']',
+    message: 'Assign defineProps() to `const props = ...` and access props via `props.foo`.',
+  }],
 };
 
 const createVuePathGroups = (shorthands: Array<string>): ImportOrderPathGroup[] => {
